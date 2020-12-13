@@ -1,5 +1,6 @@
 package com.ar6.proyecto4;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -56,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
         paramPetsList.add(varPetsList.get(6));
         paramPetsList.add(varPetsList.get(7));
 
-        //Intent varIntent = new Intent(this, Favoritos.class);
-        //varIntent.putParcelableArrayListExtra("Lista", paramPetsList);
-        //startActivity(varIntent);
+        Intent varIntent = new Intent(this, FavoritosActivity.class);
+        varIntent.putParcelableArrayListExtra("Lista", paramPetsList);
+        startActivity(varIntent);
     }
 
     @Override
@@ -66,5 +68,17 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_opt_mainact, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.mnoptmaitem2:
+                Intent varIntent = new Intent(this, AboutActivity.class);
+                startActivity(varIntent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
