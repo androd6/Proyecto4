@@ -73,9 +73,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        Intent varIntent;
+
         switch (item.getItemId()){
             case R.id.mnoptmaitem2:
-                Intent varIntent = new Intent(this, AboutActivity.class);
+                varIntent = new Intent(this, AboutActivity.class);
+                startActivity(varIntent);
+                break;
+            case R.id.mnoptmaitem1:
+                varIntent = new Intent(this, EmailActivity.class);
                 startActivity(varIntent);
                 break;
         }

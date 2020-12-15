@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto4</string>
+    <string name="appbar_title">Petagram</string>
+    <string name="manu_opt_mainact_item1">Contact</string>
+    <string name="manu_opt_mainact_item2">About</string>
+    <string name="v2_TextView1">ANDRES RODRIGUEZ</string>
+    <string name="v2_TextView2">Systems Engineer</string>
+    <string name="v2_TextView3">freelance</string>
+    <string name="v2_TextView4">2020 - COLOMBIA</string>
+    <string name="v4_address">Recipient email address</string>
+    <string name="v4_name">Name</string>
+    <string name="v4_mensaje">Message</string>
+    <string name="v4_asunto">subject</string>
+    <string name="v4_boton">Send Message</string>
+    <string name="v4_suaddress">Your gmail account</string>
+    <string name="v4_supassword">Your email password</string>
+</resources>
