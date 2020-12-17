@@ -1,4 +1,7 @@
-package com.ar6.proyecto4;
+package com.ar6.proyecto4.data;
+
+import com.ar6.proyecto4.R;
+import com.ar6.proyecto4.data.Pet;
 
 import java.util.ArrayList;
 
@@ -10,7 +13,7 @@ public class CreatePet {
 
         try {
 
-            varPets.add(new Pet("Lukas", 0, 1,R.drawable.pet1, (byte) 1));
+            varPets.add(new Pet("Lukas", 0, 1, R.drawable.pet1, (byte) 1));
             varPets.add(new Pet("Matias", 0, 3,R.drawable.pet3, (byte) 2));
             varPets.add(new Pet("Candy", 0, 1,R.drawable.pet2, (byte) 3));
             varPets.add(new Pet("Trosky", 0, 4,R.drawable.pet5, (byte) 4));

@@ -4,6 +4,8 @@
     <string name="appbar_title">Petagram</string>
     <string name="manu_opt_mainact_item1">Contact</string>
     <string name="manu_opt_mainact_item2">About</string>
+    <string name="v1_Tab1">Pets</string>
+    <string name="v1_Tab2">My Pet</string>
     <string name="v2_TextView1">ANDRES RODRIGUEZ</string>
     <string name="v2_TextView2">Systems Engineer</string>
     <string name="v2_TextView3">freelance</string>

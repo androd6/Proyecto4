@@ -3,20 +3,11 @@ package com.ar6.proyecto4;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.ar6.proyecto4.support.SendMail;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Properties;
-
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 public class EmailActivity extends AppCompatActivity {
 

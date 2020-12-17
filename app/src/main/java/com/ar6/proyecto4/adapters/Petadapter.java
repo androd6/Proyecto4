@@ -1,4 +1,4 @@
-package com.ar6.proyecto4;
+package com.ar6.proyecto4.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.ar6.proyecto4.data.Pet;
+import com.ar6.proyecto4.R;
 
 import java.util.ArrayList;
 

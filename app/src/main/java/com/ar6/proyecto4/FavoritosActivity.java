@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.ar6.proyecto4.adapters.Petadapter;
+import com.ar6.proyecto4.data.Pet;
+
 import java.util.ArrayList;
 
 public class FavoritosActivity extends AppCompatActivity {

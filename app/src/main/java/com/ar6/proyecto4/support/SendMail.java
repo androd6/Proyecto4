@@ -1,11 +1,9 @@
-package com.ar6.proyecto4;
+package com.ar6.proyecto4.support;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Properties;
 

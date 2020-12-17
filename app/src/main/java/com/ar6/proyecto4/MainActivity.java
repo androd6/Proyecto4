@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +13,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
+
+import com.ar6.proyecto4.adapters.Petadapter;
+import com.ar6.proyecto4.adapters.V1ViewPageAdapter;
+import com.ar6.proyecto4.data.CreatePet;
+import com.ar6.proyecto4.data.Pet;
+import com.ar6.proyecto4.fragments.PetDetFragment;
+import com.ar6.proyecto4.fragments.PetFragment;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
@@ -20,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Pet> varPetsList = new ArrayList<>();
     private CreatePet varPetsIni = new CreatePet();
-    private RecyclerView varRvListPet;
+    private V1ViewPageAdapter varViewPagerAdapter;
+    private ViewPager2 varViewPager;
+    private TabLayout varTabLayout;
 
     public static final ArrayList<Pet> paramPetsList = new ArrayList<>();
 
@@ -35,20 +46,26 @@ public class MainActivity extends AppCompatActivity {
 
         varPetsList = varPetsIni.getVarPets();
 
-        varRvListPet = findViewById(R.id.v1_RecycledView);
+        varViewPager = findViewById(R.id.v1_ViewPager);
+        varViewPagerAdapter = new V1ViewPageAdapter(getSupportFragmentManager(),getLifecycle());
+        varViewPagerAdapter.addFragment(new PetFragment());
+        varViewPagerAdapter.addFragment(new PetDetFragment());
+        varViewPager.setAdapter(varViewPagerAdapter);
 
-        LinearLayoutManager varLLM = new LinearLayoutManager(this);
-        varLLM.setOrientation(LinearLayoutManager.VERTICAL);
-
-        varRvListPet.setLayoutManager(varLLM);
-
-        iniAdaptador();
-
-    }
-
-    public void iniAdaptador () {
-        Petadapter varAdapterPet = new Petadapter(varPetsList);
-        varRvListPet.setAdapter(varAdapterPet);
+        varTabLayout = findViewById(R.id.v1_TabBar);
+        new TabLayoutMediator(varTabLayout, varViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position){
+                    case 0:
+                        tab.setText(R.string.v1_Tab1);
+                        break;
+                    case 1:
+                        tab.setText(R.string.v1_Tab2);
+                        break;
+                }
+            }
+        }).attach();
     }
 
     public void onClickImgBtn(View v){

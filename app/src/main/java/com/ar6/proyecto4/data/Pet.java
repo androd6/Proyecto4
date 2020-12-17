@@ -1,4 +1,4 @@
-package com.ar6.proyecto4;
+package com.ar6.proyecto4.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
