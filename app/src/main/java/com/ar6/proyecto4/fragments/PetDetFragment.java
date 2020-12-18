@@ -3,12 +3,21 @@ package com.ar6.proyecto4.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.ar6.proyecto4.R;
+import com.ar6.proyecto4.adapters.Petadapter;
+import com.ar6.proyecto4.data.CreateMyPet;
+import com.ar6.proyecto4.data.CreatePet;
+import com.ar6.proyecto4.data.Pet;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +25,10 @@ import com.ar6.proyecto4.R;
  * create an instance of this fragment.
  */
 public class PetDetFragment extends Fragment {
+
+    private ArrayList<Pet> varPetsList = new ArrayList<>();
+    private CreateMyPet varPetsIni = new CreateMyPet();
+    private RecyclerView varRvListPet;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +73,27 @@ public class PetDetFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View varView;
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pet_det, container, false);
+        varPetsList = varPetsIni.getVarPets();
+
+        varView = inflater.inflate(R.layout.fragment_pet_det, container, false);
+        varRvListPet = varView.findViewById(R.id.v1_FrgRecycledView2);
+
+        GridLayoutManager varLLM = new GridLayoutManager(getActivity(), 2);
+        varLLM.setOrientation(LinearLayoutManager.VERTICAL);
+
+        varRvListPet.setLayoutManager(varLLM);
+
+        iniAdaptador();
+
+        return varView;
+
+    }
+
+    public void iniAdaptador () {
+        Petadapter varAdapterPet = new Petadapter(varPetsList);
+        varRvListPet.setAdapter(varAdapterPet);
     }
 }

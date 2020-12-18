@@ -76,7 +76,7 @@ public class PetFragment extends Fragment {
         varPetsList = varPetsIni.getVarPets();
 
         varView = inflater.inflate(R.layout.fragment_pet, container, false);
-        varRvListPet = varView.findViewById(R.id.v1_RecycledView);
+        varRvListPet = varView.findViewById(R.id.v1_FrgRecycledView);
 
         LinearLayoutManager varLLM = new LinearLayoutManager(getActivity());
         varLLM.setOrientation(LinearLayoutManager.VERTICAL);
